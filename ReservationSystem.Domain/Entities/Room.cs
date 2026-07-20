@@ -21,8 +21,8 @@ public class Room : BaseEntity
     // Class Methods
     public void AddTimeSlot(TimeSlot timeSlot)
     {
-        if (TimeSlots.Any(t => t.Start == timeSlot.Start && t.End == timeSlot.End))
-            throw new ArgumentException($"TimeSlot already exists with {timeSlot.Start} to {timeSlot.End}");
+        if (TimeSlots.Any(t => !((timeSlot.End <= t.Start) || (t.End <= timeSlot.Start))))
+            throw new ArgumentException($"TimeSlot conflicts with an existing reservation from {timeSlot.Start} to {timeSlot.End}");
         
         TimeSlots.Add(timeSlot);
     }
