@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using ReservationSystem.Domain.Interfaces;
 using ReservationSystem.Infrastructure.Persistence;
+using ReservationSystem.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 // Add services to the container.
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

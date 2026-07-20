@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ReservationSystem.Domain.Entity;
+using ReservationSystem.Domain.Entities;
 
 namespace ReservationSystem.Infrastructure.Persistence.Configuration;
 

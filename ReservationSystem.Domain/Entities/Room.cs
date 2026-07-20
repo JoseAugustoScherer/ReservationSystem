@@ -1,6 +1,6 @@
-using ReservationSystem.Domain.Entity.Base;
+using ReservationSystem.Domain.Entities.Base;
 
-namespace ReservationSystem.Domain.Entity;
+namespace ReservationSystem.Domain.Entities;
 
 public class Room : BaseEntity
 {

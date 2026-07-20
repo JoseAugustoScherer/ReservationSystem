@@ -1,6 +1,6 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using ReservationSystem.Domain.Entity;
+using ReservationSystem.Domain.Entities;
 
 namespace ReservationSystem.Infrastructure.Persistence;
 
