@@ -7,7 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Interfaces\TimeSlotInterfaces\" />
+      <Folder Include="Services\TimeSlotServices\" />
+      <Folder Include="Validators\TimeSlotValidator\" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\ReservationSystem.Domain\ReservationSystem.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="8.6.3" />
     </ItemGroup>
 
 </Project>
