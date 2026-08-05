@@ -4,7 +4,7 @@ using ReservationSystem.Application.ViewModel;
 
 namespace ReservationSystem.Application.Interfaces.RoomInterfaces;
 
-public interface ICreateRoom
+public interface IRoomService
 {
     Task<ResponseViewModel<RoomResponse>> CreateRoomAsync(CreateRoomRequest request, CancellationToken cancellationToken = default);
 }

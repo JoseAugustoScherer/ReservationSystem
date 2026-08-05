@@ -9,7 +9,7 @@ using ReservationSystem.Domain.Interfaces;
 
 namespace ReservationSystem.Application.Services.RoomServices;
 
-public class CreateRoomService (IRoomRepository roomRepository, IUnitOfWork unitOfWork) : ICreateRoom
+public class RoomService (IRoomRepository roomRepository, IUnitOfWork unitOfWork) : IRoomService
 {
     public async Task<ResponseViewModel<RoomResponse>> CreateRoomAsync(CreateRoomRequest request, CancellationToken cancellationToken = default)
     {

@@ -7,12 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Interfaces\TimeSlotInterfaces\" />
-      <Folder Include="Services\TimeSlotServices\" />
-      <Folder Include="Validators\TimeSlotValidator\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\ReservationSystem.Domain\ReservationSystem.Domain.csproj" />
     </ItemGroup>
 

@@ -14,4 +14,11 @@ public class RoomRepository (AppDbContext dbContext) : Repository<Room>(dbContex
         
         return await dbContext.Set<Room>().FirstOrDefaultAsync(x => x.Number == number, cancellationToken);
     }
+
+    public async Task<Room?> GetRoomWithTimeSlotsAsync(Guid roomId, CancellationToken cancellationToken = default)
+    {
+        return await dbContext.Rooms
+            .Include(x => x.TimeSlots)
+            .FirstOrDefaultAsync(x => x.Id == roomId, cancellationToken);
+    }
 }

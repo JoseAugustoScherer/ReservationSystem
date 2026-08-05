@@ -9,7 +9,6 @@ public class RoomCreateRequestValidator : AbstractValidator<CreateRoomRequest>
     {
         RuleFor(x => x.Number)
             .GreaterThan(0)
-            .NotEmpty()
             .WithMessage("Number must be greater than zero");
     }
 }

@@ -1,10 +1,15 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+using ReservationSystem.Application.Interfaces.RoomInterfaces;
+using ReservationSystem.Application.Interfaces.TimeSlotInterfaces;
+using ReservationSystem.Application.Services.RoomServices;
+using ReservationSystem.Application.Services.TimeSlotServices;
 using ReservationSystem.Domain.Interfaces;
 using ReservationSystem.Infrastructure.Persistence;
 using ReservationSystem.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
 
 // Database
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQL");
@@ -23,6 +28,8 @@ builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddScoped<ITimeSlotRepository, TimeSlotRepository>();
+builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<ITimeSlotService, TimeSlotService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -38,5 +45,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapControllers();
 app.Run();
